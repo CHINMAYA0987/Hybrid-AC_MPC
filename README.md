@@ -128,7 +128,7 @@ python scripts/eval.py \
 
 **Flags.** `--policy` is `acmlp` or `acmpc`. `--env` is `hover`, `circular`, or `split_s`.
 
-> ⚠️ **Long runs should go through `scripts/train_chunked.py`, not `train.py`.** It restarts the training process periodically to work around a real memory leak in `mpc.pytorch`. Details in [`CLAUDE.md`](CLAUDE.md).
+> ⚠️ **Long runs should go through `scripts/train_chunked.py`, not `train.py`.** It restarts the training process periodically to work around a real memory leak in `mpc.pytorch`. 
 
 ---
 
