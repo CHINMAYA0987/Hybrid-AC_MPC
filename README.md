@@ -1,7 +1,7 @@
 <h1 align="center">Hybrid-Precision ACMPC</h1>
 
 <p align="center">
-  <em>A faithful reproduction of <strong>Actor-Critic Model Predictive Control</strong> — plus an honest attempt to make it fast.</em>
+  <em>A faithful reproduction of <strong>Actor-Critic Model Predictive Control</strong> - plus an honest attempt to make it fast.</em>
 </p>
 
 <p align="center">
@@ -45,10 +45,10 @@ This repository:
 |  | **ACMLP** | **ACMPC** | **ACMPC — Hybrid** |
 |---|---|---|---|
 | **Actor output** | action, directly | cost function `(Q, p)` | same as ACMPC |
-| **Network → motors** | nothing | differentiable MPC solve | fp16 network → fp32 MPC solve *(unchanged)* |
+| **Network -> motors** | nothing | differentiable MPC solve | fp16 network -> fp32 MPC solve *(unchanged)* |
 | **Precision** | fp32 | fp32 | fp16 trunk, fp32 solver |
 | **Critic** | plain MLP | plain MLP (no solver) | plain MLP |
-| **Real-time capable?** | yes | no — ~300–600 ms/step | no — same solver dominates |
+| **Real-time capable?** | yes | no - ~300–600 ms/step | no - same solver dominates |
 
 ---
 
@@ -60,7 +60,7 @@ This repository:
 | Widened start position (OOD) | 59.3% | **80.0%** | **+20.7 pp** | 74.8% → 90.4% |
 | Wind disturbance | 47.3% | **96.0%** | **+48.7 pp** | 6.5% → 83.3% |
 
-Measured at n = 150–300 episodes. The wind result sits at **~12+ standard errors** — not noise — and was cross-validated on two independent wind disturbance models.
+Measured at n = 150–300 episodes. The wind result sits at **~12+ standard errors** - not noise - and was cross-validated on two independent wind disturbance models.
 
 **This did not come easily.** The first attempt, at a 2M-timestep budget, reproduced the *opposite* result: ACMPC losing to ACMLP under wind, consistently. Chasing it down — a mechanism diagnostic, then a more physically realistic wind model, then more training budget — found the real cause: **undertraining**. The paper reports ~11.5 hours of ACMPC training; the initial reproduction used ~24 minutes. Scaling to 8M steps, after also catching and fixing a **silent PPO training collapse** (an unguarded KL-divergence spike; `target_kl` was never enabled), recovered the paper's pattern cleanly.
 
