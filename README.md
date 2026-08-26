@@ -1,7 +1,7 @@
 <h1 align="center">Hybrid-Precision ACMPC</h1>
 
 <p align="center">
-  <em>A faithful reproduction of <strong>Actor-Critic Model Predictive Control</strong> - plus an honest attempt to make it fast.</em>
+  <em>A faithful reproduction of <strong>Actor-Critic Model Predictive Control</strong> - plus an honest attempt to make it fast. [Pardon in case of any mistake :) ]</em>
 </p>
 
 <p align="center">
