@@ -12,11 +12,11 @@
   <a href="docs/report.html"><img src="https://img.shields.io/badge/report-interactive-4c9a2a" alt="Report"/></a>
 </p>
 
-<p align="center">
-  <img src="assets/demo.gif" alt="ACMPC closed-loop rollout on an 8-gate circular track" width="100%"/>
+<!-- <p align="center">
+  <img src="https://github.com/user-attachments/assets/90a03305-100a-4966-ab81-0ecc121f3d54" alt="ACMPC closed-loop rollout on an 8-gate circular track" width="100%"/>
   <br>
   <em>A trained ACMPC policy flying an 8-gate circular track — real closed-loop rollout, no cherry-picking.</em>
-</p>
+</p> -->
 
 ---
 
